@@ -28,13 +28,13 @@ html, body{
     width: 700px;
 }
 
-.game-box > div{
+.game-box > button{
     height: 150px;
     padding: 20px;
     border: 1.7px solid black;
 
 }
-.game-box > div > h1{
+.game-box > button > h1{
     text-align: center;
     font-size: 100px;
 }
@@ -57,4 +57,16 @@ html, body{
     padding: 20px;
     background-color: blanchedalmond;
     cursor: pointer;;
+}
+
+
+.game-over {
+    background-color: rgba(0, 0, 0, 0.385);
+    opacity: 50%;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+
 }
