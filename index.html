@@ -11,15 +11,28 @@
     <div class="top-part">
         <h1 >Tic Tac Toe</h1>
     </div>
-    <div style="display: none;" class="game-over">
-        <p>
-            <h1>game-over</h1>
-        </p>
+    <div style="display: none;" class="result-div">
+        <div>
+            <h1>IT'S A DRAW !</h1>
+            <button onClick="window.location.reload();" class="resetButton">Reset</button>
+        </div>
         
     </div>
     <div class="game-part">
         <div class="game-box">
-            <button class="choice-click" >
+            <button style="border-top: none; border-left: none;" class="choice-click" >
+                <h1 class="choice-box1" style="display: none;">X</h1>
+                <h1 class="choice-box2" style="display: none;">O</h1>
+            </button>
+            <button style="border-top: none;" class="choice-click">
+                <h1 class="choice-box1" style="display: none;">X</h1>
+                <h1 class="choice-box2" style="display: none;">O</h1>
+            </button>
+            <button style="border-top: none; border-right: none;" class="choice-click">
+                <h1 class="choice-box1" style="display: none;">X</h1>
+                <h1 class="choice-box2" style="display: none;">O</h1>
+            </button>
+            <button style="border-left: none;" class="choice-click">
                 <h1 class="choice-box1" style="display: none;">X</h1>
                 <h1 class="choice-box2" style="display: none;">O</h1>
             </button>
@@ -27,31 +40,19 @@
                 <h1 class="choice-box1" style="display: none;">X</h1>
                 <h1 class="choice-box2" style="display: none;">O</h1>
             </button>
-            <button class="choice-click">
+            <button style="border-right: none;" class="choice-click">
                 <h1 class="choice-box1" style="display: none;">X</h1>
                 <h1 class="choice-box2" style="display: none;">O</h1>
             </button>
-            <button class="choice-click">
+            <button style="border-bottom: none; border-left: none;" class="choice-click">
                 <h1 class="choice-box1" style="display: none;">X</h1>
                 <h1 class="choice-box2" style="display: none;">O</h1>
             </button>
-            <button class="choice-click">
+            <button style="border-bottom: none;" class="choice-click">
                 <h1 class="choice-box1" style="display: none;">X</h1>
                 <h1 class="choice-box2" style="display: none;">O</h1>
             </button>
-            <button class="choice-click">
-                <h1 class="choice-box1" style="display: none;">X</h1>
-                <h1 class="choice-box2" style="display: none;">O</h1>
-            </button>
-            <button class="choice-click">
-                <h1 class="choice-box1" style="display: none;">X</h1>
-                <h1 class="choice-box2" style="display: none;">O</h1>
-            </button>
-            <button class="choice-click">
-                <h1 class="choice-box1" style="display: none;">X</h1>
-                <h1 class="choice-box2" style="display: none;">O</h1>
-            </button>
-            <button class="choice-click">
+            <button style="border-bottom: none; border-right: none;" class="choice-click">
                 <h1 class="choice-box1" style="display: none;">X</h1>
                 <h1 class="choice-box2" style="display: none;">O</h1>
             </button>

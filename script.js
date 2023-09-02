@@ -1,27 +1,18 @@
 
-let Gameboard = () => {
-    let gameboard = []
-
-    
-
-}
-
-
-
-const gameControl = () => {
-    let gamePlay = () => {
+const gameBoard = () => {
+    let gameControl = () => {
+        let clickCount = 0;
         let choiceBtnX = document.querySelector(".x-choice > button")
         let choiceBtnO = document.querySelector(".o-choice > button")
         let btnContainerX = document.querySelector(".x-choice")
         let btnContainerO = document.querySelector(".o-choice")
-        let gameOver = document.querySelector(".game-over")
         let boxClick = document.querySelectorAll(".game-box > button")
         let displayChoice1 = document.querySelectorAll(".choice-box1")
         let displayChoice2 = document.querySelectorAll(".choice-box2")
         
-            let turn = displayChoice1
-            let turnX = displayChoice2
-            choiceBtnX.addEventListener("click", () => {
+        let turn = displayChoice1
+        let turnX = displayChoice2
+        choiceBtnX.addEventListener("click", () => {
 
                 btnContainerX.innerHTML = ""
                 btnContainerO.innerHTML = ""
@@ -29,28 +20,29 @@ const gameControl = () => {
                     
                 for(let i = 0 ; i <boxClick.length; i++){
                             boxClick[i].addEventListener("click", () => {
-                                
+                                clickCount++
+                                resultDiv(clickCount)
+                                console.log(clickCount);
                                     if(turnX == displayChoice2){
                                         if(turnX[i].style.display !== "block"){
-                                            turnX = displayChoice1
-                                            turnX[i].style.display = "block"
+                                         turnX = displayChoice1
+                                         turnX[i].style.display = "block"
+                                            
                                         }
                                         
                                     }
                                     else if(turnX == displayChoice1) {
                                         if(turnX[i].style.display !== "block"){
-                                            turnX = displayChoice2
-                                            turnX[i].style.display = "block"
+                                         turnX = displayChoice2
+                                         turnX[i].style.display = "block"
+                                            
                                         }
                                     }
-                                })
+                                }, {once : true})
                             }
                         })
             
-
-
-
-            choiceBtnO.addEventListener("click", () => {
+        choiceBtnO.addEventListener("click", () => {
 
                 btnContainerX.innerHTML = ""
                 btnContainerO.innerHTML = ""
@@ -58,71 +50,127 @@ const gameControl = () => {
                     
                 for(let i = 0 ; i <boxClick.length; i++){
                             boxClick[i].addEventListener("click", () => {
-                                
+                                clickCount++
+                                resultDiv(clickCount)
+                                console.log(clickCount);
                                     if(turn == displayChoice1){
                                         if(turn[i].style.display !== "block"){
-                                            turn = displayChoice2
-                                            turn[i].style.display = "block"
-                                            
+                                         turn = displayChoice2
+                                         turn[i].style.display = "block" 
                                         }
                                     }
                                     else if(turn == displayChoice2) {
                                         if(turn[i].style.display !== "block"){
-                                            turn = displayChoice1
-                                            turn[i].style.display = "block"
-                                            
+                                         turn = displayChoice1
+                                         turn[i].style.display = "block"   
                                         }
                                     }
-                                })
+                                    
+                                }, {once : true})
                             }
                         })
-            
-        
-            /*let varOver = 1;
-            
-            for(let i = 0; i < turn.length; i++){
-                if(turn[i].style.display == "none" && turnX[i].style.display == "none"){
-                    
-                    varOver = 0;
-
-                }
-                else {
-                    console.log("working")
-                    varOver = 1 ;
-                }
-                
-
-
-            }
-
-            console.log(varOver)
-            if (varOver == 1){
-                gameOver.style.display = "block";
-            }*/
-
-        
-        
-        
-                    
     }
 
-    
+    function gameWin(turn, playerVal){
 
+        let resultDiv = document.querySelector(".result-div")
+            
+        if( turn[2-1].style.display === "block" && turn[5-1].style.display === "block" && turn[8-1].style.display === "block"){
+            resultDiv.style.display = "flex"
+            resultDiv.innerHTML = `<h1>PLAYER ${playerVal} WON ! 🎊 </h1>
+            <button onClick="window.location.reload();" class="resetButton">Reset</button>`
+            }
+        else if( turn[4-1].style.display==="block" && turn[5-1].style.display === "block" && turn[6-1].style.display === "block"){
+            resultDiv.style.display = "flex"
+            resultDiv.innerHTML = `<h1>PLAYER ${playerVal} WON ! 🎊 </h1>
+            <button onClick="window.location.reload();" class="resetButton">Reset</button>`
+            }
+        else if( turn[1-1].style.display === "block" && turn[5-1].style.display === "block" && turn[9-1].style.display === "block"){
+            resultDiv.style.display = "flex"
+            resultDiv.innerHTML = `<h1>PLAYER ${playerVal} WON ! 🎊 </h1>
+            <button onClick="window.location.reload();" class="resetButton">Reset</button>`
+            }
+        else if( turn[3-1].style.display === "block" && turn[5-1].style.display === "block" && turn[7-1].style.display === "block"){
+            resultDiv.style.display = "flex"
+            resultDiv.innerHTML = `<h1>PLAYER ${playerVal} WON ! 🎊 </h1>
+            <button onClick="window.location.reload();" class="resetButton">Reset</button>`
+            }
+        else if( turn[1-1].style.display === "block" && turn[4-1].style.display === "block" && turn[7-1].style.display === "block"){
+            resultDiv.style.display = "flex"
+            resultDiv.innerHTML = `<h1>PLAYER ${playerVal} WON ! 🎊 </h1>
+            <button onClick="window.location.reload();" class="resetButton">Reset</button>`
+            }
+        else if( turn[3-1].style.display === "block" && turn[6-1].style.display === "block" && turn[9-1].style.display === "block"){
+            resultDiv.style.display = "flex"
+            resultDiv.innerHTML = `<h1>PLAYER ${playerVal} WON ! 🎊 </h1>
+            <button onClick="window.location.reload();" class="resetButton">Reset</button>`
+            }
+        else if( turn[1-1].style.display === "block" && turn[2-1].style.display === "block" && turn[3-1].style.display === "block"){
+            resultDiv.style.display = "flex"
+            resultDiv.innerHTML = `<h1>PLAYER ${playerVal} WON ! 🎊 </h1>
+            <button onClick="window.location.reload();" class="resetButton">Reset</button>`
+            }
+        else if( turn[7-1].style.display === "block" && turn[8-1].style.display === "block" && turn[9-1].style.display === "block"){
+            resultDiv.style.display = "flex"
+            resultDiv.innerHTML = `<h1>PLAYER ${playerVal} WON ! 🎊 </h1>
+            <button onClick="window.location.reload();" class="resetButton">Reset</button>`
+            }
+    }
 
-    
+    function resultDiv(clickCount){
+        let resultDiv = document.querySelector(".result-div")
+        if (clickCount == 9){
+            resultDiv.style.display = "flex"
+        }
+    }
     
     let  players = () => {
+
+        function PlayerXWin(){
+            let playerVal = "- X";
+            let boxClick = document.querySelectorAll(".game-box > button")
+            let turn = document.querySelectorAll(".choice-box1")
+            
+            CheckWin(boxClick,turn,playerVal)
+        }
+        PlayerXWin()
         
+        function PlayerOWin (){
+            let playerVal = "- O";
+            let boxClick = document.querySelectorAll(".game-box > button")
+            let turn = document.querySelectorAll(".choice-box2")
+            CheckWin(boxClick,turn,playerVal)
+        }
+        PlayerOWin()
     
+    
+    
+        function CheckWin(boxClick,turn,playerVal){
+            for(let i = 0 ; i < boxClick.length; i++){
+                boxClick[i].addEventListener("click", () => {
+                    gameWin(turn,playerVal)
+    
+                })
+            }
+        }
     }
     
 
-    return {gamePlay};
+    return {gameControl,players};
 
 }
 
-let play = gameControl();
-play.gamePlay();
+let play = gameBoard();
+play.gameControl();
+
+
+function WinfuncX(){
+    play.players()
+}
+let TimeSetX = setTimeout(WinfuncX, 3000);
+
+
+
 
 
 
