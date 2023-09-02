@@ -75,42 +75,42 @@ const gameBoard = () => {
 
         let resultDiv = document.querySelector(".result-div")
             
-        if( turn[2-1].style.display === "block" && turn[5-1].style.display === "block" && turn[8-1].style.display === "block"){
+        if( turn[1].style.display === "block" && turn[4].style.display === "block" && turn[7].style.display === "block"){
             resultDiv.style.display = "flex"
             resultDiv.innerHTML = `<h1>PLAYER ${playerVal} WON ! 🎊 </h1>
             <button onClick="window.location.reload();" class="resetButton">Reset</button>`
             }
-        else if( turn[4-1].style.display==="block" && turn[5-1].style.display === "block" && turn[6-1].style.display === "block"){
+        else if( turn[3].style.display==="block" && turn[4].style.display === "block" && turn[5].style.display === "block"){
             resultDiv.style.display = "flex"
             resultDiv.innerHTML = `<h1>PLAYER ${playerVal} WON ! 🎊 </h1>
             <button onClick="window.location.reload();" class="resetButton">Reset</button>`
             }
-        else if( turn[1-1].style.display === "block" && turn[5-1].style.display === "block" && turn[9-1].style.display === "block"){
+        else if( turn[0].style.display === "block" && turn[4].style.display === "block" && turn[8].style.display === "block"){
             resultDiv.style.display = "flex"
             resultDiv.innerHTML = `<h1>PLAYER ${playerVal} WON ! 🎊 </h1>
             <button onClick="window.location.reload();" class="resetButton">Reset</button>`
             }
-        else if( turn[3-1].style.display === "block" && turn[5-1].style.display === "block" && turn[7-1].style.display === "block"){
+        else if( turn[2].style.display === "block" && turn[4].style.display === "block" && turn[6].style.display === "block"){
             resultDiv.style.display = "flex"
             resultDiv.innerHTML = `<h1>PLAYER ${playerVal} WON ! 🎊 </h1>
             <button onClick="window.location.reload();" class="resetButton">Reset</button>`
             }
-        else if( turn[1-1].style.display === "block" && turn[4-1].style.display === "block" && turn[7-1].style.display === "block"){
+        else if( turn[0].style.display === "block" && turn[3].style.display === "block" && turn[6].style.display === "block"){
             resultDiv.style.display = "flex"
             resultDiv.innerHTML = `<h1>PLAYER ${playerVal} WON ! 🎊 </h1>
             <button onClick="window.location.reload();" class="resetButton">Reset</button>`
             }
-        else if( turn[3-1].style.display === "block" && turn[6-1].style.display === "block" && turn[9-1].style.display === "block"){
+        else if( turn[2].style.display === "block" && turn[5].style.display === "block" && turn[8].style.display === "block"){
             resultDiv.style.display = "flex"
             resultDiv.innerHTML = `<h1>PLAYER ${playerVal} WON ! 🎊 </h1>
             <button onClick="window.location.reload();" class="resetButton">Reset</button>`
             }
-        else if( turn[1-1].style.display === "block" && turn[2-1].style.display === "block" && turn[3-1].style.display === "block"){
+        else if( turn[0].style.display === "block" && turn[1].style.display === "block" && turn[2].style.display === "block"){
             resultDiv.style.display = "flex"
             resultDiv.innerHTML = `<h1>PLAYER ${playerVal} WON ! 🎊 </h1>
             <button onClick="window.location.reload();" class="resetButton">Reset</button>`
             }
-        else if( turn[7-1].style.display === "block" && turn[8-1].style.display === "block" && turn[9-1].style.display === "block"){
+        else if( turn[6].style.display === "block" && turn[7].style.display === "block" && turn[8].style.display === "block"){
             resultDiv.style.display = "flex"
             resultDiv.innerHTML = `<h1>PLAYER ${playerVal} WON ! 🎊 </h1>
             <button onClick="window.location.reload();" class="resetButton">Reset</button>`
